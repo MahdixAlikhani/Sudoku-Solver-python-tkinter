@@ -11,25 +11,26 @@ from Grids import generatehard
 # Build a root and customize size and color and header text
 root = Tk()
 root.title("Sudoku Solver")
-root.geometry("324x550")
+root.geometry("324x600")
 root.configure(background="#111111")
 
 # Write a label and make text boxes
-label = tkinter.Label(root, text="Fill in the numbers and click solve\n Also this app can generate sudoku\n Choose level",
-                      bg="#111111", fg="#ffc905").grid(row=0, column=1, columnspan=10)
+label = tkinter.Label(root, text="\nFill in the numbers and click solve\n Also this app can generate sudoku\n "
+                        "Choose level\n\n Developers: Shakiba Nazari & Mahdi Alikhani\n",
+                        bg="#111111", fg="#ffc905").grid(row=0, column=1, columnspan=10)
 
 errLabel = tkinter.Label(root, text="", fg="red")
 errLabel.grid(row=15, column=1, columnspan=10, pady=5)
 
 solvedLabel = tkinter.Label(root, text="", fg="green")
 solvedLabel.grid(row=15, column=1, columnspan=10, pady=5)
+
 cells = {}
 
 # Function for validate numbers
 def ValidateNumber(P):
     out = (P.isdigit or P == "") and len(P) < 2
     return out
-
 
 reg = root.register(ValidateNumber)
 

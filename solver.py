@@ -37,6 +37,7 @@ def valid_move(grid, row, column, number):
 # Function for increase cells, rows and columns and then put the number in cells
 # O(n)
 def solving(grid, row, column):
+
     if column == 9:
         if row == 8:
             return True
@@ -63,7 +64,10 @@ def solving(grid, row, column):
 # Function for return grid to main file
 # O(n)
 def solver(grid):
+
     if solving(grid, 0, 0):
+        print("count:", end=" ")
+        print(len(listnumber))
         for i in range(0, len(listnumber), 20):
             print(listnumber[i:i + 20])
         return grid
